@@ -19,9 +19,6 @@ import pandas as pd
 # Importa o numpy com o apelido np'
 import numpy as np
 
-# Importa a biblioteca datetime
-from datetime import datetime as dt
-
 
 def obter_moedas_disponiveis():
     # Link da requisição
@@ -151,7 +148,6 @@ def obter_cotacoes():
 
             # Converte o carimbo de data/hora numa data do tipo dd/mm/aaaa
             data = extrair_data(carimbo_data_hora)
-            print(f"Data da cotação: {data}")
 
             # Verifica se a coluna de data está presente no dataframe
             if data not in df_moedas:
@@ -160,6 +156,12 @@ def obter_cotacoes():
 
             # Preenche a célula com o valor da cotação
             df_moedas.loc[df_moedas.iloc[:, 0] == moeda, data] = valor
+
+    # Exporta o dataframe como uma planilha do Excel
+    df_moedas.to_excel("cotacao-moesas.xlsx")
+
+    # Atualiza a mensagem de cotações
+    rotulo_mensagem_atualizacao["text"] = "Cotações obtidas com sucesso"
 
 
 # Lista de moedas disponíveis
