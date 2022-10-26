@@ -4,8 +4,7 @@
 
 Este projeto apresenta um sistema construído com o tkinter, uma
 biblioteca padrão do Python, para obtenção de cotações de
-moedas estrangeiras usando a API do 
-<a href=""><abbr title="Banco Central do Brasil">BACEN</abbr></a>.
+moedas estrangeiras usando a API do <abbr title="Banco Central do Brasil">BACEN</abbr>.
 
 A janela permite que o usuário execute duas tarefas: (1) obter
 a cotação de uma das moedas disponíveis em uma data especificada e
